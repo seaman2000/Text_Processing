@@ -7,7 +7,6 @@ def find_match(part):
 
 
 tickets = input().split(", ")
-
 for ticket in tickets:
     ticket = ticket.strip()
 
