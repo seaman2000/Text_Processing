@@ -1,15 +1,32 @@
-def ticket_is_valid(each_ticket: str) -> bool:
-    if len(ticket) == 20:
-        return True
-    return False
+def find_match(part):
+    for symbol in "@#$^":
+        for count in range(10, 5, -1):
+            if symbol * count in part:
+                return symbol, count
+    return "", 0
 
-def symbol_finder(left, right):
-    
-    for left, right:
-box_of_tickets = input().split(", ")
-for ticket in box_of_tickets:
-    if ticket_is_valid(ticket):
-        left_side = ticket[:10]
-        right_side = ticket[10:]
 
-        if
+tickets = input().split(", ")
+
+for ticket in tickets:
+    ticket = ticket.strip()
+
+    if len(ticket) != 20:
+        print("invalid ticket")
+        continue
+
+    left = ticket[:10]
+    right = ticket[10:]
+
+    left_symbol, left_count = find_match(left)
+    right_symbol, right_count = find_match(right)
+
+    if left_symbol == right_symbol and left_symbol != "":
+        match_count = min(left_count, right_count)
+
+        if match_count == 10:
+            print(f'ticket "{ticket}" - {match_count}{left_symbol} Jackpot!')
+        else:
+            print(f'ticket "{ticket}" - {match_count}{left_symbol}')
+    else:
+        print(f'ticket "{ticket}" - no match')
