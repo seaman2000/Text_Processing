@@ -1,24 +1,22 @@
 string_sequence = input()
+
 result = ""
-list_of_uniques = []
-repeat_counter = ""
-collected_chars = ""
+current_string = ""
+current_number = ""
 
-for idx in range(len(string_sequence)):
-
-    if string_sequence[idx].isdigit():
-        repeat_counter += string_sequence[idx]
+for char in string_sequence:
+    if not char.isdigit():
+        if current_number:
+            result += current_string * int(current_number)
+            current_string = ""
+            current_number = ""
+        current_string += char
     else:
-        collected_chars += string_sequence[idx]
+        current_number += char
 
-        if string_sequence[idx] not in list_of_uniques:
-            list_of_uniques.append(string_sequence[idx])
+result += current_string * int(current_number)
 
-        result += collected_chars * int(repeat_counter)
-        list_of_uniques = [char for char in collected_chars if char not in list_of_uniques]
+result = result.upper()
 
-        repeat_counter = ""
-        collected_chars = ""
-
-print(f"Unique symbols used: {len(list_of_uniques)}")
-print(result.upper())
+print(f"Unique symbols used: {len(set(result))}")
+print(result)
