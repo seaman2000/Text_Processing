@@ -4,10 +4,11 @@ def valid_length(name:str) -> bool:
     return False
 
 
-def valid_characters(name:str) -> bool:
-    if name.isalnum() or "-" in name or "_" in name:
-        return True
-    return False
+def valid_characters(name: str) -> bool:
+    for ch in name:
+        if not (ch.isalnum() or ch == "-" or ch == "_"):
+            return False
+    return True
 
 
 def redundant_exclusive(name:str) -> bool:
