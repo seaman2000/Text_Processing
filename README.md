@@ -22,15 +22,5 @@ The repository includes exercises and solutions related to:
 
 ---
 
-## 🛠 Technologies
 
-- **Python 3.12**
-- **PyCharm**
-- **Virtual Environment (venv)**
-
----
-
-## 📂 Structure
-
-Example structure of the repository:
 
