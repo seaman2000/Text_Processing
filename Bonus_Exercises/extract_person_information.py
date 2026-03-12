@@ -7,7 +7,7 @@ for _ in range(number_of_strings):
     name_pattern = r'(?<=@)(?P<name>\w+)(?=\|)'
     age_pattern = r'(?<=#)(?P<age>\d+)(?=\*)'
 
-    name = re.search(name_pattern, text)
-    age = re.search(age_pattern, text)
+    name = re.search(name_pattern, text).group()
+    age = re.search(age_pattern, text).group()
 
-    print(f"{name.group("name")} is {age.group("age")} years old.")
+    print(f"{name} is {age} years old.")
