@@ -1,4 +1,4 @@
-# Python Fundamentals – Text Processing
+# 🐍 Python Fundamentals – Text Processing
 
 This section focuses on **Text Processing** in Python.
 
